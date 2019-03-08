@@ -13,7 +13,7 @@ module.exports = (options) => ({
   },
 
   resolve: {
-    extensions: ['.mjs', '.js', '.json', '.pcss', '.css'],
+    extensions: ['.mjs', '.js'],
   },
 
   module: {
