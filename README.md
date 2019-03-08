@@ -72,8 +72,8 @@ Import the polyfill in your entry file:
 import 'whatwg-fetch'
 ```
 
-As the fetch module uses Promises and does not include a polyfill, the module needs to be processed by Babel so remember
-to add `--modules whatwg-fetch` as a command line interface.
+As the fetch module use Promises and does not include a polyfill, the module needs to be processed by Babel so remember
+to add it to the modules argument: `--modules whatwg-fetch`.
 
 
 Features
