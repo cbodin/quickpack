@@ -77,6 +77,13 @@ As the fetch module use Promises and does not include a polyfill, the module nee
 to add it to the modules argument: `--modules whatwg-fetch`.
 
 
+Examples
+------
+Fully working project examples:
+- [HTML, JS and PostCSS example](examples/html-js-postcss)
+- [HTML, Vue SPA and PostCSS example](examples/html-vue-postcss)
+
+
 Features
 ------
 **Vue**
