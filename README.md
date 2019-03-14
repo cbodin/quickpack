@@ -7,7 +7,7 @@ Installation
 ------
 Add the package as a dev dependency:
 ```bash
-npm i -D github:cbodin/quickpack#v2.2.0
+npm i -D github:cbodin/quickpack#v2.2.1
 ```
 
 Create a [`.browserslistrc`](https://github.com/browserslist/browserslist) file in the root of your project. A common config is:
