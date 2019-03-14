@@ -1,6 +1,6 @@
 {
   "name": "@cbodin/quickpack",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Pre-configured webpack with ES2018 and PostCSS (SCSS like syntax, Autoprefixer), packaged in a simple CLI",
   "author": "Christofer Bodin <christofer@christoferbodin.se>",
   "license": "MIT",
