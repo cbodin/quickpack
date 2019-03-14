@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (options) => ({
   mode: options.development ? 'development' : 'production',
@@ -52,6 +53,13 @@ module.exports = (options) => ({
     new MiniCssExtractPlugin({ filename: options.css }),
     new FriendlyErrorsWebpackPlugin(),
     new VueLoaderPlugin(),
+    ...(options.template ? [
+      new HtmlWebpackPlugin({
+        filename: options.html,
+        template: options.template,
+        inject: false,
+      })
+    ] : []),
   ],
 
   devtool: 'source-map',

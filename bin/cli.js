@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 (() => {
+  const fs = require('fs');
   const path = require('path');
   const webpack = require('webpack');
   const { ArgumentParser } = require('argparse');
@@ -23,13 +24,16 @@
     help: 'Define input folder, default "src/".',
     defaultValue: 'src/',
   });
+  parser.addArgument(['--output'], {
+    help: 'Define output folder, default "dist/".',
+    defaultValue: 'dist/',
+  });
   parser.addArgument(['--entry'], {
     help: 'Define entry point, default "src/index.js".',
     defaultValue: 'src/index.js',
   });
-  parser.addArgument(['--output'], {
-    help: 'Define output folder, default "dist/".',
-    defaultValue: 'dist/',
+  parser.addArgument(['--template'], {
+    help: 'Define HTML template file, default "src/index.html".',
   });
   parser.addArgument(['--js'], {
     help: 'Define output JS filename, default "bundle.js".',
@@ -39,6 +43,10 @@
     help: 'Define output CSS filename, default "style.css".',
     defaultValue: 'style.css',
   });
+  parser.addArgument(['--html'], {
+    help: 'Define output HTML filename, default "index.html".',
+    defaultValue: 'index.html',
+  });
   parser.addArgument(['--modules'], {
     help: 'Enable babel for npm modules, comma separated.',
     defaultValue: '',
@@ -47,10 +55,20 @@
   // Check arguments
   const args = parser.parseArgs();
 
-  // Ensure absolute paths for input, entry and output
+  // Ensure absolute paths for input, output and entry.
   args.input = resolveApp(args.input);
-  args.entry = resolveApp(args.entry);
   args.output = resolveApp(args.output);
+  args.entry = resolveApp(args.entry);
+
+  // Add default template file if none was specified.
+  const defaultTemplate = resolveApp('src/index.html');
+  if (!args.template && fs.existsSync(defaultTemplate)) {
+    args.template = defaultTemplate;
+  } else if (args.template) {
+    args.template = resolveApp(args.template);
+  } else {
+    args.template = null;
+  }
 
   // Create an array of modules and resolve to node_modules
   args.modules = args.modules.split(',')

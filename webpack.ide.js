@@ -5,9 +5,11 @@ const config = require(configPath);
 module.exports = config({
   development: true,
   input: 'src/',
-  entry: 'src/index.js',
   output: 'dist/',
+  entry: 'src/index.js',
+  template: 'src/index.html',
   js: 'bundle.js',
   css: 'style.css',
+  html: 'index.html',
   modules: [],
 });
