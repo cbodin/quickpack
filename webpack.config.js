@@ -38,7 +38,7 @@ module.exports = (options) => ({
         ],
       },
       {
-        test: /\.(svg|png)/,
+        test: /\.(svg|png)$/,
         use: 'url-loader',
       },
       {
