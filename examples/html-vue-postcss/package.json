@@ -1,0 +1,16 @@
+{
+  "name": "html-vue-postcss",
+  "description": "Example usage of Quickpack with a HTML file, a Vue SPA and PostCSS.",
+  "scripts": {
+    "build": "quickpack",
+    "dev": "quickpack -d"
+  },
+  "devDependencies": {
+    "@cbodin/quickpack": "github:cbodin/quickpack#v2.2.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.9",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.9"
+  }
+}
