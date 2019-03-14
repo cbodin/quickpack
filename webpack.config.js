@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = (options) => ({
   mode: options.development ? 'development' : 'production',
@@ -40,12 +41,17 @@ module.exports = (options) => ({
         test: /\.(svg|png)/,
         use: 'url-loader',
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
     ],
   },
 
   plugins: [
     new MiniCssExtractPlugin({ filename: options.css }),
     new FriendlyErrorsWebpackPlugin(),
+    new VueLoaderPlugin(),
   ],
 
   devtool: 'source-map',
