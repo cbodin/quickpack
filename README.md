@@ -78,6 +78,9 @@ to add it to the modules argument: `--modules whatwg-fetch`.
 
 Features
 ------
+**Vue**
+- Vue [single file components](https://vuejs.org/v2/guide/single-file-components.html) using [vue-loader](https://vue-loader.vuejs.org/)
+
 **Babel**
 - [@babel/plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime)
 - [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env)
