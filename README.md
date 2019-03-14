@@ -30,6 +30,7 @@ This is tested with IntelliJ based editors. Point the webpack plugin to `node_mo
 Usage
 ------
 The default behavior is to use `src/index.js` as an entry point. Output for JS and CSS bundles defaults to `dist/`.
+An `index.html` HTML file in the input folder (default `src/index.html`) will be copied over as-is to the output folder. 
 
 Run `npx quickpack -h` for a list of all options.
 
