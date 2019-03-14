@@ -1,0 +1,11 @@
+{
+  "name": "html-js-postcss",
+  "description": "Example usage of Quickpack with a HTML file, JS and PostCSS.",
+  "scripts": {
+    "build": "quickpack",
+    "dev": "quickpack -d"
+  },
+  "devDependencies": {
+    "@cbodin/quickpack": "github:cbodin/quickpack#v2.2.0"
+  }
+}
