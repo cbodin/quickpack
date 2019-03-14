@@ -14,7 +14,7 @@ module.exports = (options) => ({
   },
 
   resolve: {
-    extensions: ['.mjs', '.js'],
+    extensions: ['.mjs', '.js', '.vue'],
   },
 
   module: {
