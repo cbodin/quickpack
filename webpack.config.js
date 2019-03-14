@@ -20,7 +20,7 @@ module.exports = (options) => ({
   module: {
     rules: [
       {
-        test: /\.p?css$/,
+        test: /\.(p|post)?css$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader', options: { sourceMap: true } },
